@@ -37,6 +37,7 @@ const usuario1 = new Usuario("Sol", "Nievas", 19, 1.57)
 const usuario2 = new Usuario("Lucas", "Mauricio", 27, 1.67)
 
 const usuarios = [usuario1, usuario2, usuario0]
+
 function menuSeña() {
     alert("En este menu se van a mostrar señas que podrias usar para comunicarte!\n\n👋🏼 - Hola, chau \n✋🏼🤛🏼 - Chocar\n ✋🏼👈🏼 - ¿Qué?\n 🤷🏽‍♀️ - No sé")
 }
@@ -76,11 +77,12 @@ do {
             break;
         case '6':
             alert("A continuacion te mostraremos la lista de usuarios registrados")
-            console.log(usuarios)
+            usuarios.forEach(usuario => {
+                console.log(usuario)
+            })
             break;
         default:
             console.log("No reconocimos ese comando :c")
             break;
     }
 } while (seña != '6')
-
