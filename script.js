@@ -38,6 +38,7 @@ const usuario2 = new Usuario("Lucas", "Mauricio", 27, 1.67)
 
 const usuarios = [usuario1, usuario2, usuario0]
 
+
 function menuSeña() {
     alert("En este menu se van a mostrar señas que podrias usar para comunicarte!\n\n👋🏼 - Hola, chau \n✋🏼🤛🏼 - Chocar\n ✋🏼👈🏼 - ¿Qué?\n 🤷🏽‍♀️ - No sé")
 }
@@ -73,7 +74,7 @@ do {
             break;
         case '5':
             alert("A continuacion en la consola se mostrara tu perfil de usuario")
-            console.log(usuario0)
+            console.log(usuarios.find(usuario => usuario.edad === edadUsuario))
             break;
         case '6':
             alert("A continuacion te mostraremos la lista de usuarios registrados")
