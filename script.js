@@ -1,89 +1,58 @@
-let seña
-
-let = nombreUsuario = prompt("Ingrese su nombre").toLowerCase()
-let = apellidoUsuario = prompt("Ingrese su apellido").toLowerCase()
-let = edadUsuario = parseInt(prompt("Ingrese su edad"))
-let = alturaUsuario = parseFloat(prompt("Ingrese su altura"))
-
+let miUsuario = prompt("Ingrese su nombre por favor")
+let miUsuario2 = prompt("Ingrese su apellido por favor")
+let miUsuario3 = prompt("ahora ingrese su edad por favor")
+let miUsuario4 = prompt("y por ultimo ingrese su genero por favor")
 class Usuario {
-    constructor(nombre, apellido, edad, altura) {
+    constructor(id, nombre, apellido, edad, genero) {
+        this.id = id
         this.nombre = nombre
         this.apellido = apellido
         this.edad = edad
-        this.altura = altura
+        this.genero = genero
     }
-
-    aumentarEdad(porcAumento) {
-        this.edad += porcAumento
-    }
-
-
-    disminuirEdad(porcDisminucion) {
-        this.edad -= porcDisminucion
-    }
-
-    aumentarAltura(nuevaAltura) {
-        this.altura += nuevaAltura
-    }
-
-    disminuirAltura(bajarAltura) {
-        this.altura -= bajarAltura
-    }
-
-
 }
-const usuario0 = new Usuario(nombreUsuario, apellidoUsuario, edadUsuario, alturaUsuario)
-const usuario1 = new Usuario("Sol", "Nievas", 19, 1.57)
-const usuario2 = new Usuario("Lucas", "Mauricio", 27, 1.67)
+const usuario1 = new Usuario(1, "Martin", "Nievas", 20, "Masculino")
+const usuario2 = new Usuario(2, "Jorge", "Ilaichi", 25, "Masculino")
+const usuario3 = new Usuario(3, "Anthony", "Sparda", 28, "Masculino")
+const usuario4 = new Usuario(4, "Luz", "Lilia", 30, "Femenino")
+const usuario0 = new Usuario(0, miUsuario, miUsuario2, miUsuario3, miUsuario4)
 
-const usuarios = [usuario1, usuario2, usuario0]
+const usuarios = [usuario1, usuario2, usuario3, usuario4, usuario0]
 
+const divUsuarios = document.getElementById("divUsuarios")
 
 function menuSeña() {
     alert("En este menu se van a mostrar señas que podrias usar para comunicarte!\n\n👋🏼 - Hola, chau \n✋🏼🤛🏼 - Chocar\n ✋🏼👈🏼 - ¿Qué?\n 🤷🏽‍♀️ - No sé")
 }
 
-function personalizadoPalabra() {
-    opcion2 = parseFloat(prompt("ingrese un numero"))
-    if (opcion2 == 36) {
-        opcion2 = console.log("la palabra traducida seria ''Hola''");
-    } else {
-        console.log("Has ingresado un numero invalido")
-    }
+function miPerfil() {
+    console.log("Te mostramos tu perfil a continuacion")
 }
 
-function cambiarLenguaje() {
-    alert("Por el momento esto se encuentra en mantenimiento")
-}
-alert(nombreUsuario, "bienvenido")
-alert("Te damos la Bienvenida")
 do {
-    seña = prompt("Bienvenidos al Proyecto ZEIT por favor ingresa una opcion:\n\n1 - Lenguaje de señas\n2 - Numeros Personalizados(36)\n3 - Otro lenguaje\n4 - Salir de la aplicacion - \n5 - Mi perfil - \n6 - Lista de usuarios")
+    seña = prompt("Bienvenidos al Proyecto ZEIT por favor ingresa una opcion:\n\n1 - Lenguaje de señas\n2 - Mi Perfil")
     switch (seña) {
         case '1':
             menuSeña();
             break;
         case '2':
-            personalizadoPalabra();
-            break;
-        case '3':
-            cambiarLenguaje();
-            break;
-        case '4':
-            console.log("Nos vemos la proxima! :D");
-            break;
-        case '5':
-            alert("A continuacion en la consola se mostrara tu perfil de usuario")
-            console.log(usuarios.find(usuario => usuario.edad === edadUsuario))
-            break;
-        case '6':
-            alert("A continuacion te mostraremos la lista de usuarios registrados")
+            miPerfil();
             usuarios.forEach(usuario => {
-                console.log(usuario)
+                divUsuarios.innerHTML = `
+                <div><h2>Bienvenido a continuacion te dejamos tu perfil de usuario :D</h2></div>
+                <div class="card" id="usuario${usuario.id}" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">nombre: ${usuario.nombre}</h5>
+                <p class="card-text">apellido: ${usuario.apellido}</p>
+                <p class="card-text">edad: ${usuario.edad}</p>
+                <p class="card-text">genero: ${usuario.genero}</p>
+            </div>
+            </div>
+                `
             })
             break;
         default:
             console.log("No reconocimos ese comando :c")
             break;
     }
-} while (seña != '6')
+} while (seña != '2')
