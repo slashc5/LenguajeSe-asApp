@@ -1,18 +1,9 @@
-#divUsuarios {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+body h2,
+p {
+    text-align: center;
 }
 
-.card {
-    background-color: rgba(235, 20, 217, 0.364);
-    color: rgb(255, 255, 255);
-}
-
-body {
-    background-color: black;
-}
-
-#divUsuarios h2 {
-    color: white;
+body img {
+    width: 400px;
+    margin-left: 700px;
 }

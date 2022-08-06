@@ -1,58 +1,38 @@
-let miUsuario = prompt("Ingrese su nombre por favor")
-let miUsuario2 = prompt("Ingrese su apellido por favor")
-let miUsuario3 = prompt("ahora ingrese su edad por favor")
-let miUsuario4 = prompt("y por ultimo ingrese su genero por favor")
-class Usuario {
-    constructor(id, nombre, apellido, edad, genero) {
-        this.id = id
-        this.nombre = nombre
-        this.apellido = apellido
-        this.edad = edad
-        this.genero = genero
-    }
-}
-const usuario1 = new Usuario(1, "Martin", "Nievas", 20, "Masculino")
-const usuario2 = new Usuario(2, "Jorge", "Ilaichi", 25, "Masculino")
-const usuario3 = new Usuario(3, "Anthony", "Sparda", 28, "Masculino")
-const usuario4 = new Usuario(4, "Luz", "Lilia", 30, "Femenino")
-const usuario0 = new Usuario(0, miUsuario, miUsuario2, miUsuario3, miUsuario4)
+const boton1 = document.getElementById("boton1")
+const boton3 = document.getElementById("boton3")
+const boton5 = document.getElementById("boton5")
 
-const usuarios = [usuario1, usuario2, usuario3, usuario4, usuario0]
 
-const divUsuarios = document.getElementById("divUsuarios")
 
-function menuSeña() {
-    alert("En este menu se van a mostrar señas que podrias usar para comunicarte!\n\n👋🏼 - Hola, chau \n✋🏼🤛🏼 - Chocar\n ✋🏼👈🏼 - ¿Qué?\n 🤷🏽‍♀️ - No sé")
-}
+// la funcion de los eventos vendria a ser que cuando el usuario toque click en el boton se muestre el contenido html figurado abajo
+boton1.addEventListener('click', () => {
+    bodyPa.innerHTML = `     <div><h2>Diccionario de lenguaje de señas</h2>
+    <article>
+    <h2> Te dejo una imagen para poder familiarizarte con el lenguaje y ponerlo en practica.</h2>
+    <img src="./images/depositphotos_209132638-stock-illustration-vector-language-of-deaf-mutes.jpg" alt="">
+</article>    <div clas"botonOriginal">
+    <a id="boton2" href="./index.html" class="btn btn-primary">Ya me lo aprendi, volvamos atras</a></div>`
 
-function miPerfil() {
-    console.log("Te mostramos tu perfil a continuacion")
-}
-
-do {
-    seña = prompt("Bienvenidos al Proyecto ZEIT por favor ingresa una opcion:\n\n1 - Lenguaje de señas\n2 - Mi Perfil")
-    switch (seña) {
-        case '1':
-            menuSeña();
-            break;
-        case '2':
-            miPerfil();
-            usuarios.forEach(usuario => {
-                divUsuarios.innerHTML = `
-                <div><h2>Bienvenido a continuacion te dejamos tu perfil de usuario :D</h2></div>
-                <div class="card" id="usuario${usuario.id}" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">nombre: ${usuario.nombre}</h5>
-                <p class="card-text">apellido: ${usuario.apellido}</p>
-                <p class="card-text">edad: ${usuario.edad}</p>
-                <p class="card-text">genero: ${usuario.genero}</p>
-            </div>
-            </div>
-                `
-            })
-            break;
-        default:
-            console.log("No reconocimos ese comando :c")
-            break;
-    }
-} while (seña != '2')
+})
+boton3.addEventListener('click', () => {
+    bodyPa.innerHTML = `     <div><h2>Esta opcion estara disponible pronto...</h2>
+    <a id="boton4" href="./index.html" class="btn btn-primary">Podriamos volver para atras :c?</a>`
+})
+boton5.addEventListener('click', () => {
+    bodyPa.innerHTML = `<form>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>`
+})
