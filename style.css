@@ -1,9 +1,65 @@
-body h2,
-p {
+body {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    transition: ease 0.5s;
+    background-image: url(./images/asdasdasd.jpg);
+}
+
+.darkMode {
+    background-image: url(./images/84248.png);
+
+    color: rgb(255, 255, 255);
+}
+
+.colorRandom {
+    background-color: rgb(235, 13, 235);
+}
+
+.bodyProfile img {
+    width: 300px;
+}
+
+.bodyProfile {
     text-align: center;
 }
 
-body img {
-    width: 400px;
-    margin-left: 700px;
+.perfil {
+    border-style: solid;
+}
+
+.botonAtras {
+    text-decoration: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.botonesDark {
+    display: flex;
+    flex-direction: column;
+    margin-left: 60px;
+    justify-content: space-evenly;
+}
+
+.lenguaje img {
+    width: 300px;
+    margin: 10px;
+}
+
+.lenguaje2 {
+    display: flex;
+    justify-content: center;
+}
+
+.lenguaje3 {
+    display: flex;
+    justify-content: center;
+}
+
+.lenguaje4 {
+    display: flex;
+    justify-content: center;
 }
