@@ -77,3 +77,16 @@ botonLight.addEventListener('click', () => {
     document.body.classList.remove("darkMode")
     localStorage.setItem('darkMode', "light")
 })
+let botonPatas = document.getElementById("tiene")
+
+patas4.addEventListener('click', () => {
+    let patas = 4;
+    let accion = "muerde";
+    (patas == 4) && (accion == "muerde") ? botonPatas.innerHTML = `    <p>Respuesta correcta!</p>`: botonPatas.innerHTML = `    <p>Respuesta Incorrecta!</p>`;
+})
+
+patas2.addEventListener('click', () => {
+    let patas = 2;
+    let accion = "muerde";
+    (patas == 4) && (accion == "muerde") ? botonPatas.innerHTML = `    <p>Respuesta Correcta!</p>`: botonPatas.innerHTML = `    <p>Respuesta Incorrecta!</p>`;
+})

@@ -37,6 +37,10 @@ body {
     text-align: center;
 }
 
+body img {
+    width: 400px;
+}
+
 .botonesDark {
     display: flex;
     flex-direction: column;
