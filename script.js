@@ -71,22 +71,48 @@ const botonLight = document.getElementById('botonLightMode')
 botonDark.addEventListener('click', () => {
     document.body.classList.add("darkMode")
     localStorage.setItem('darkMode', "dark")
+    Toastify({
+        text: "Tu tema se a guardado con exito!",
+        className: "info",
+        style: {
+            background: "linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(188,244,255,1) 0%, rgba(27,201,236,1) 0%, rgba(2,0,36,1) 0%,",
+        }
+    }).showToast();
 })
 
 botonLight.addEventListener('click', () => {
     document.body.classList.remove("darkMode")
     localStorage.setItem('darkMode', "light")
+    Toastify({
+        text: "Tu tema se a guardado con exito!",
+        className: "info",
+        style: {
+            background: "linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(188,244,255,1) 0%, rgba(27,201,236,1) 0%, rgba(2,0,36,1) 0%,",
+        }
+    }).showToast();
 })
 let botonPatas = document.getElementById("tiene")
 
 patas4.addEventListener('click', () => {
     let patas = 4;
     let accion = "muerde";
-    (patas == 4) && (accion == "muerde") ? botonPatas.innerHTML = `    <p>Respuesta correcta!</p>`: botonPatas.innerHTML = `    <p>Respuesta Incorrecta!</p>`;
+    (patas == 4) && (accion == "muerde") ? botonPatas.innerHTML = `    <p>Respuesta correcta!</p>`: botonPatas.innerHTML = `    <p>Respuesta Incorrecta!</p>`
+    Swal.fire({
+        icon: 'success',
+        title: 'Muy Bien!',
+        text: 'Respuesta correcta, confirmo con exactitud que usted no es un robot!',
+        footer: '<a href="">Seguinos</a>'
+    });
 })
 
 patas2.addEventListener('click', () => {
     let patas = 2;
     let accion = "muerde";
-    (patas == 4) && (accion == "muerde") ? botonPatas.innerHTML = `    <p>Respuesta Correcta!</p>`: botonPatas.innerHTML = `    <p>Respuesta Incorrecta!</p>`;
+    (patas == 4) && (accion == "muerde") ? botonPatas.innerHTML = `    <p>Respuesta Correcta!</p>`: botonPatas.innerHTML = `    <p>Respuesta Incorrecta!</p>`
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Esa respuesta no es correcta, por favor vuelva a intentarlo!',
+        footer: '<a href="">Por que sucede esto?</a>'
+    });
 })
