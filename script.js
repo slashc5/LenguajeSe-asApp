@@ -37,16 +37,18 @@ const imagen2 = `    <h2>Te presentamos el lugar de aprendizaje donde podras pon
 </div>
 `
 // evento aprendizaje de imagenes
-boton1.addEventListener('click', () => {
-    bodyPa.innerHTML = `<div><img src="./images/giphy.gif" alt=""></div>
-    <div><button><a class="botonAtras" id="boton3" href="./index.html" class="btn btn-primary">Volver para atras</button></a></div>`
-    document.getElementById("botonF").style.visibility = "visible"
-})
+// boton1.addEventListener('click', () => {
+//     bodyPa.innerHTML = `<div><img src="./images/giphy.gif" alt=""></div>
+//     <div><button><a class="botonAtras" id="boton3" href="./index.html" class="btn btn-primary">Volver para atras</button></a></div>`
+//     document.getElementById("botonF").style.visibility = "visible"
+//     document.getElementById("examen").style.visibility = "hidden"
+// })
 // mostrado de imagenes y desactivacion de botones html
-botonF.addEventListener('click', () => {
+boton1.addEventListener('click', () => {
     bodyPa.innerHTML = imagen2
     document.getElementById("botonF").style.visibility = "hidden"
     document.getElementById("botonesDark1").style.visibility = "hidden"
+    document.getElementById("examen").style.visibility = "hidden"
 })
 
 

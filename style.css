@@ -45,7 +45,8 @@ body img {
     display: flex;
     flex-direction: column;
     margin-left: 60px;
-    justify-content: space-evenly;
+    justify-content: center;
+
 }
 
 .lenguaje img {
@@ -53,7 +54,7 @@ body img {
     margin: 10px;
 }
 
-.lenguaje2 {
+/* .lenguaje2 {
     display: flex;
     justify-content: center;
 }
@@ -66,4 +67,4 @@ body img {
 .lenguaje4 {
     display: flex;
     justify-content: center;
-}
+} */
