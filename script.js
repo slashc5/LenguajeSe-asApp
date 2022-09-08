@@ -36,6 +36,14 @@ const imagen2 = `    <h2>Te presentamos el lugar de aprendizaje donde podras pon
 </button></a>
 </div>
 `
+
+let imagenesExamen = ["1_.gif", "2_.gif", "3_.gif", "4_.gif", "5_.gif", "6_.gif", "7_.gif", "8_.gif", "9_.gif", "10_.gif"];
+let imgExamen = document.querySelector("#examen img");
+imgExamen.src = "./images/sin_respuesta/" + imagenesExamen[Math.floor(Math.random()*imagenesExamen.length)];
+generarImagen.addEventListener('click', () => {
+    imgExamen.src = "./images/sin_respuesta/" + imagenesExamen[Math.floor(Math.random()*imagenesExamen.length)]; //"./images/1.gif"
+});
+
 // evento aprendizaje de imagenes
 // boton1.addEventListener('click', () => {
 //     bodyPa.innerHTML = `<div><img src="./images/giphy.gif" alt=""></div>
@@ -44,15 +52,14 @@ const imagen2 = `    <h2>Te presentamos el lugar de aprendizaje donde podras pon
 //     document.getElementById("examen").style.visibility = "hidden"
 // })
 // mostrado de imagenes y desactivacion de botones html
-boton1.addEventListener('click', () => {
+boton1.addEventListener('click', (
+
+) => {
     bodyPa.innerHTML = imagen2
     document.getElementById("botonF").style.visibility = "hidden"
     document.getElementById("botonesDark1").style.visibility = "hidden"
     document.getElementById("examen").style.visibility = "hidden"
 })
-
-
-
 
 // localstorage DarkMode
 if (localStorage.getItem('darkMode')) {
@@ -95,26 +102,22 @@ botonLight.addEventListener('click', () => {
 })
 let botonPatas = document.getElementById("tiene")
 
+// Estos eventos son para mostrar la alerta swal fire
 patas4.addEventListener('click', () => {
-    let patas = 4;
-    let accion = "muerde";
-    (patas == 4) && (accion == "muerde") ? botonPatas.innerHTML = `    <p>Respuesta correcta!</p>`: botonPatas.innerHTML = `    <p>Respuesta Incorrecta!</p>`
     Swal.fire({
         icon: 'success',
         title: 'Muy Bien!',
-        text: 'Respuesta correcta, confirmo con exactitud que usted no es un robot!',
+        text: 'Gracias. Hemos guardado tu informacion correctamente',
+        footer: '<a href="">Seguinos</a>'
+    });
+})
+ 
+patas2.addEventListener('click', () => {
+    Swal.fire({
+        icon: 'error',
+        title: '¡Que mal!',
+        text: 'Una lastima :c, para eso te recomendamos un repaso en la seccion de aprendizaje',
         footer: '<a href="">Seguinos</a>'
     });
 })
 
-patas2.addEventListener('click', () => {
-    let patas = 2;
-    let accion = "muerde";
-    (patas == 4) && (accion == "muerde") ? botonPatas.innerHTML = `    <p>Respuesta Correcta!</p>`: botonPatas.innerHTML = `    <p>Respuesta Incorrecta!</p>`
-    Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Esa respuesta no es correcta, por favor vuelva a intentarlo!',
-        footer: '<a href="">Por que sucede esto?</a>'
-    });
-})

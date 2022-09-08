@@ -54,6 +54,20 @@ body img {
     margin: 10px;
 }
 
+#patas4 {
+    background-image: url(./images/2.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 100px;
+}
+#patas2 {
+    background-image: url(./images/3.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 100px;
+}
 /* .lenguaje2 {
     display: flex;
     justify-content: center;
